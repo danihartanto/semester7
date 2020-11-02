@@ -1,0 +1,14 @@
+import tweepy
+import csv
+import pandas as pd
+from tweepy.auth import OAuthHandler
+consumer_key = "key api kalian"
+consumer_secret = "secret key kalian"
+access_token = "api token kalian"
+access_token_secret = "secret token kalian"
+auth = OAuthHandler(consumer_key,consumer_secret)
+auth.set_access_token(access_token,access_token_secret)
+api = tweepy.API(auth)
+
+hasiluser = api.user_timeline(id="@username pengguna twitter",count=20)
+print(hasiluser.text)
